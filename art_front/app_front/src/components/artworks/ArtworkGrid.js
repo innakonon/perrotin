@@ -14,7 +14,7 @@ function ArtworkGrid({favorites, items, isLoading}) {
         ))}
 
         {favorites.map(favorite => (
-            <ArtworkFavorites favorite={favorite}></ArtworkFavorites>
+            <ArtworkFavorites items={items} favorite={favorite}></ArtworkFavorites>
         ))}
         {/* <AddFavorites items={items}/> */}
     </section>
