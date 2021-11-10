@@ -1,10 +1,24 @@
 import React , {useState} from 'react'
 
-function Search() {
+const Search = ({getQuery}) => {
+
+    const [text, setText] = useState('')
+
+    const onChange = (q) => {
+
+        setText(q)
+        getQuery(q)
+    }
     return (
         <section className='search'>
             <form>
-                <input type='text' ></input>
+                <input 
+                type='text'
+                placeholder='Search an artwork' 
+                autoFocus
+                value={text}
+                onChange={(e) => onChange(e.target.value)}
+                />
             </form>
         </section>
     )
